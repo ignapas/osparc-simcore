@@ -93,6 +93,20 @@ qx.Class.define("qxapp.ui.form.Jumbo", {
       if (text) {
         text.setValue(value);
       }
+    },
+
+    /**
+     * Event handler for the pointer over event.
+     */
+    _onPointerOver: function(e) {
+      this.addState("hovered");
+    },
+
+    /**
+     * Event handler for the pointer out event.
+     */
+    _onPointerOut : function(e) {
+      this.removeState("hovered");
     }
   }
 });
