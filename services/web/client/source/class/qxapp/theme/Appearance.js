@@ -127,6 +127,23 @@ qx.Theme.define("qxapp.theme.Appearance", {
         };
       }
     },
+
+    "service-window": {
+      include: "window",
+      alias: "window",
+      style: (state, styles) => {
+        styles.decorator = "window-small-cap";
+        return styles;
+      }
+    },
+    "service-window/captionbar": {
+      include: "window/captionbar",
+      style: (state, styles) => {
+        styles.backgroundColor = "material-button-background";
+        styles.decorator = "workbench-small-cap-captionbar";
+        return styles;
+      }
+    },
     /*
     ---------------------------------------------------------------------------
       PanelView
@@ -171,6 +188,30 @@ qx.Theme.define("qxapp.theme.Appearance", {
     "textfilter": {},
     "textfilter/textfield": "toolbar-textfield",
 
+    "toolbar-selectbox": {
+      include: "textfield",
+      alias: "selectbox",
+      style: (state, styles) => {
+        styles.margin = [7, 10];
+        styles.paddingLeft = 5;
+        return styles;
+      }
+    },
+    "toolbar-selectbox/arrow": {
+      include: "selectbox/arrow",
+      style: (state, styles) => {
+        styles.cursor = "pointer";
+        return styles;
+      }
+    },
+    "toolbar-selectbox/list": {
+      include: "selectbox/list",
+      style: (state, styles) => {
+        styles.padding = 0;
+        return styles;
+      }
+    },
+
     /*
     ---------------------------------------------------------------------------
       SidePanel
@@ -201,6 +242,32 @@ qx.Theme.define("qxapp.theme.Appearance", {
     "node-ports": {
       style: state => ({
         backgroundColor: "background-main-lighter+"
+      })
+    },
+
+    /*
+    ---------------------------------------------------------------------------
+      Jumbo
+    ---------------------------------------------------------------------------
+    */
+    "jumbo": {
+      include: "material-button",
+      alias: "material-button",
+      style: (state, styles) => {
+        styles.padding = 8;
+        return styles;
+      }
+    },
+
+    /*
+    ---------------------------------------------------------------------------
+      ServiceBrowser
+    ---------------------------------------------------------------------------
+    */
+    "service-browser": {
+      style: state => ({
+        padding: 8,
+        decorator: "service-browser"
       })
     },
 
