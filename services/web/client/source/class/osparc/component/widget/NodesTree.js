@@ -101,7 +101,9 @@ qx.Class.define("osparc.component.widget.NodesTree", {
         this.__exportGroup();
       }, this);
       osparc.utils.Utils.setIdToWidget(exportButton, "exportServicesBtn");
-      toolbar.add(exportButton);
+      if (osparc.data.Permissions.getInstance().canDo("study.node.export")) {
+        toolbar.add(exportButton);
+      }
 
       const openButton = new qx.ui.toolbar.Button(this.tr("Open"), "@FontAwesome5Solid/edit/"+iconSize);
       openButton.addListener("execute", e => {
